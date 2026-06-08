@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   createParticles();
   bindActions();
+  generateQRCode();
 });
 
 // ---------------------------------------------------------------------------
@@ -44,7 +45,7 @@ function bindActions() {
   if (shareBtn) shareBtn.addEventListener('click', shareCard);
 
   // Ripple effect on every interactive button
-  document.querySelectorAll('.contact-btn, .btn-primary, .btn-secondary').forEach(btn => {
+  document.querySelectorAll('.contact-btn, .btn').forEach(btn => {
     btn.addEventListener('click', createRipple);
   });
 }
@@ -120,10 +121,10 @@ function showToast(message) {
   if (!toast) return;
 
   toast.textContent = message;
-  toast.classList.add('show');
+  toast.classList.add('toast--visible');
 
   clearTimeout(showToast._timer);
-  showToast._timer = setTimeout(() => toast.classList.remove('show'), 3000);
+  showToast._timer = setTimeout(() => toast.classList.remove('toast--visible'), 3000);
 }
 
 // ---------------------------------------------------------------------------
@@ -151,4 +152,27 @@ function createRipple(e) {
 
   btn.appendChild(ripple);
   setTimeout(() => ripple.remove(), 600);
+}
+
+// ---------------------------------------------------------------------------
+// QR Code generation
+// ---------------------------------------------------------------------------
+function generateQRCode() {
+  const container = document.getElementById('qrCode');
+  if (!container) return;
+
+  const canvas = document.createElement('canvas');
+  container.appendChild(canvas);
+
+  // Generates QR Code pointing to the LinkedIn profile
+  QRCode.toCanvas(canvas, 'https://www.linkedin.com/in/luis-henrique-saraiva', {
+    width: 128,
+    margin: 1,
+    color: {
+      dark: '#060610',
+      light: '#ffffff'
+    }
+  }, (err) => {
+    if (err) console.error('Erro ao gerar QR Code:', err);
+  });
 }
