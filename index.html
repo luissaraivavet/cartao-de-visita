@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Luís Henrique Saraiva | Médico Veterinário</title>
   <meta name="description" content="Cartão de visita digital de Luís Henrique Saraiva — Médico Veterinário especialista em sanidade animal, patologia e biossegurança. CRMV-MG 17.194">
-  <meta name="theme-color" content="#060610">
+  <meta name="theme-color" content="#090d0b">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Luís Henrique Saraiva | Médico Veterinário">
@@ -28,12 +28,11 @@
 
   <!-- ===== Background Effects ===== -->
   <div class="bg" aria-hidden="true">
-    <div class="bg__gradient"></div>
+    <div class="bg__noise"></div>
+    <div class="bg__grid"></div>
     <div class="bg__orb bg__orb--1"></div>
     <div class="bg__orb bg__orb--2"></div>
     <div class="bg__orb bg__orb--3"></div>
-    <div class="bg__noise"></div>
-    <div class="bg__grid"></div>
     <div class="bg__particles" id="particles"></div>
   </div>
 
@@ -41,14 +40,48 @@
   <main class="card-wrapper">
     <article class="card" id="card">
 
+      <!-- BRAND LOGO -->
+      <div class="brand-header">
+        <svg class="brand-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logotipo Luís Henrique Saraiva — Veterinária e IA">
+          <!-- Moldura geométrica (biossegurança e precisão) -->
+          <path d="M50 15 L85 35 V65 L50 85 L15 65 V35 Z" stroke="var(--clr-glass-border)" stroke-width="2" stroke-dasharray="4 4"/>
+          <!-- Monograma LHS -->
+          <!-- L -->
+          <path d="M35 35 V65 H48" stroke="url(#lhs-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- H -->
+          <path d="M52 35 V65" stroke="url(#lhs-grad)" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M65 35 V65" stroke="url(#lhs-grad)" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M52 50 H65" stroke="url(#lhs-grad)" stroke-width="4.5" stroke-linecap="round"/>
+          <!-- S (Forma geométrica complementar em dourado) -->
+          <path d="M38 35 H48 A 5 5 0 0 1 48 45 H38 A 5 5 0 0 0 38 55 H48" stroke="url(#lhs-grad-alt)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          
+          <!-- Nodos de IA / Conexões de Dados -->
+          <circle cx="50" cy="15" r="3" fill="var(--clr-accent)"/>
+          <circle cx="85" cy="35" r="3" fill="var(--clr-accent-tertiary)"/>
+          <circle cx="15" cy="65" r="3" fill="var(--clr-accent-tertiary)"/>
+          <circle cx="50" cy="85" r="3" fill="var(--clr-accent)"/>
+          <line x1="50" y1="15" x2="52" y2="35" stroke="var(--clr-glass-border)" stroke-width="1"/>
+          <line x1="35" y1="65" x2="50" y2="85" stroke="var(--clr-glass-border)" stroke-width="1"/>
+          
+          <defs>
+            <linearGradient id="lhs-grad" x1="35" y1="35" x2="65" y2="65" gradientUnits="userSpaceOnUse">
+              <stop stop-color="var(--clr-accent)"/>
+              <stop offset="1" stop-color="var(--clr-accent-tertiary)"/>
+            </linearGradient>
+            <linearGradient id="lhs-grad-alt" x1="38" y1="35" x2="48" y2="55" gradientUnits="userSpaceOnUse">
+              <stop stop-color="var(--clr-accent-tertiary)"/>
+              <stop offset="1" stop-color="var(--clr-accent)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
       <!-- HERO -->
       <header class="hero">
         <div class="hero__photo-frame">
-          <div class="hero__photo-glow"></div>
-          <div class="hero__photo-ring"></div>
           <img
             src="photo.png"
-            alt="Dr. Luís Henrique Saraiva"
+            alt="Luís Henrique Saraiva"
             class="hero__photo"
             id="profilePhoto"
             onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';"
@@ -74,117 +107,95 @@
         </p>
       </header>
 
-      <!-- BIO -->
-      <div class="section">
-        <div class="section__divider"></div>
-        <p class="bio">
-          Especialista em <strong>sanidade animal</strong> e <strong>patologia</strong>, com sólida trajetória em liderança, docência no ensino superior e gestão de projetos no <strong>agronegócio</strong>.
-        </p>
-      </div>
+      <!-- BENTO GRID CONTENT -->
+      <div class="bento-grid">
+        
+        <!-- Bento item 1: Bio -->
+        <div class="bento-item bento-item--bio">
+          <p class="bio">
+            Especialista em <strong>sanidade animal</strong> e <strong>patologia suína</strong> (Mestre/UFV), focado em soluções de <span class="bio-highlight"><strong>Inteligência Artificial aplicadas ao Agronegócio</strong></span>, gestão técnica de campo e docência.
+          </p>
+        </div>
 
-      <!-- HIGHLIGHTS -->
-      <div class="section">
-        <div class="section__divider"></div>
-        <div class="highlights">
-          <div class="highlight-card">
-            <div class="highlight-card__value">10+</div>
-            <div class="highlight-card__label">Anos Exp.</div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-card__value">55+</div>
-            <div class="highlight-card__label">Skills</div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-card__value">3</div>
-            <div class="highlight-card__label">Diplomas</div>
+        <!-- Bento item 2: Highlights -->
+        <div class="bento-item bento-item--highlights">
+          <span class="bento-label">Foco Técnico</span>
+          <div class="highlights-block">
+            <div class="highlight-line"><strong>Formação:</strong> Mestre em Med. Veterinária (UFV)</div>
+            <div class="highlight-line"><strong>Foco:</strong> Patologia e Sanidade de Suínos</div>
+            <div class="highlight-line"><strong>Tecnologia:</strong> Inteligência Artificial no Agro</div>
           </div>
         </div>
-      </div>
 
-      <!-- CONTACT -->
-      <div class="section">
-        <div class="section__divider"></div>
-        <p class="section__label">Contato</p>
-        <nav class="contact-grid" aria-label="Informações de contato">
-          <a href="https://wa.me/553182298906" target="_blank" rel="noopener" class="contact-btn contact-btn--whatsapp" id="btn-whatsapp">
-            <span class="contact-btn__icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </span>
-            <span class="contact-btn__info">
-              <span class="contact-btn__label">WhatsApp</span>
-              <span class="contact-btn__detail">(31) 8229-8906</span>
-            </span>
-          </a>
-          <a href="mailto:luishenriquesaraiva@gmail.com" class="contact-btn contact-btn--email" id="btn-email">
-            <span class="contact-btn__icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </span>
-            <span class="contact-btn__info">
-              <span class="contact-btn__label">E-mail</span>
-              <span class="contact-btn__detail">luishenrique...@gmail.com</span>
-            </span>
-          </a>
-          <a href="https://www.linkedin.com/in/luis-henrique-saraiva" target="_blank" rel="noopener" class="contact-btn contact-btn--linkedin" id="btn-linkedin">
-            <span class="contact-btn__icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </span>
-            <span class="contact-btn__info">
-              <span class="contact-btn__label">LinkedIn</span>
-              <span class="contact-btn__detail">luis-henrique-saraiva</span>
-            </span>
-          </a>
-          <a href="https://www.instagram.com/luishenriquesaraiva.vet/" target="_blank" rel="noopener" class="contact-btn contact-btn--instagram" id="btn-instagram">
-            <span class="contact-btn__icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
-            </span>
-            <span class="contact-btn__info">
-              <span class="contact-btn__label">Instagram</span>
-              <span class="contact-btn__detail">@luishenriquesaraiva.vet</span>
-            </span>
-          </a>
-        </nav>
-      </div>
-
-      <!-- EXPERTISE -->
-      <div class="section">
-        <div class="section__divider"></div>
-        <p class="section__label">Especialização</p>
-        <div class="expertise-list">
-          <span class="expertise-tag"><span class="expertise-tag__icon">🐷</span> Patologia de Suínos</span>
-          <span class="expertise-tag"><span class="expertise-tag__icon">🔬</span> Histopatologia</span>
-          <span class="expertise-tag"><span class="expertise-tag__icon">🛡️</span> Biossegurança</span>
-          <span class="expertise-tag"><span class="expertise-tag__icon">🏥</span> Sanidade Animal</span>
-          <span class="expertise-tag"><span class="expertise-tag__icon">🎓</span> Docência Superior</span>
-          <span class="expertise-tag"><span class="expertise-tag__icon">📊</span> Gestão & Liderança</span>
-          <span class="expertise-tag"><span class="expertise-tag__icon">🧪</span> Pesquisa Clínica</span>
-          <span class="expertise-tag"><span class="expertise-tag__icon">🤝</span> Assistência Técnica</span>
-        </div>
-      </div>
-
-      <!-- QR CODE -->
-      <div class="section">
-        <div class="section__divider"></div>
-        <div class="qr-section">
-          <div class="qr-code" id="qrCode"></div>
-          <div class="qr-info">
-            <p class="qr-info__title">Escaneie para conectar</p>
-            <p class="qr-info__desc">Aponte a câmera do celular para acessar meu perfil no LinkedIn</p>
+        <!-- Bento item 3: Expertise -->
+        <div class="bento-item bento-item--expertise">
+          <span class="bento-label">Especialização</span>
+          <div class="expertise-list">
+            <span class="expertise-tag">IA no Agronegócio</span>
+            <span class="expertise-tag">Patologia de Suínos</span>
+            <span class="expertise-tag">Histopatologia</span>
+            <span class="expertise-tag">Biossegurança</span>
+            <span class="expertise-tag">Sanidade Animal</span>
+            <span class="expertise-tag">Docência Superior</span>
+            <span class="expertise-tag">Pesquisa & Dados</span>
+            <span class="expertise-tag">Indicadores de Campo</span>
           </div>
         </div>
-      </div>
 
-      <!-- CTA -->
-      <div class="section">
-        <div class="section__divider"></div>
-        <div class="actions">
-          <button class="btn btn--primary" id="btn-save-contact" type="button">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/></svg>
-            <span>Salvar Contato</span>
-          </button>
-          <button class="btn btn--ghost" id="btn-share" type="button" title="Compartilhar cartão">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-          </button>
+        <!-- Bento item 4: Contacts -->
+        <div class="bento-item bento-item--contacts">
+          <span class="bento-label">Contatos</span>
+          <nav class="contact-grid" aria-label="Informações de contato">
+            <a href="https://wa.me/553182298906" target="_blank" rel="noopener" class="contact-btn contact-btn--whatsapp" id="btn-whatsapp">
+              <span class="contact-btn__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </span>
+              <span class="contact-btn__info">
+                <span class="contact-btn__label">WhatsApp</span>
+                <span class="contact-btn__detail">(31) 8229-8906</span>
+              </span>
+            </a>
+            <a href="mailto:luishenriquesaraiva@gmail.com" class="contact-btn contact-btn--email" id="btn-email">
+              <span class="contact-btn__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </span>
+              <span class="contact-btn__info">
+                <span class="contact-btn__label">E-mail</span>
+                <span class="contact-btn__detail">luishenriquesaraiva@gmail.com</span>
+              </span>
+            </a>
+            <a href="https://www.linkedin.com/in/luis-henrique-saraiva" target="_blank" rel="noopener" class="contact-btn contact-btn--linkedin" id="btn-linkedin">
+              <span class="contact-btn__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </span>
+              <span class="contact-btn__info">
+                <span class="contact-btn__label">LinkedIn</span>
+                <span class="contact-btn__detail">luis-henrique-saraiva</span>
+              </span>
+            </a>
+            <a href="https://www.instagram.com/luishenriquesaraiva.vet/" target="_blank" rel="noopener" class="contact-btn contact-btn--instagram" id="btn-instagram">
+              <span class="contact-btn__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+              </span>
+              <span class="contact-btn__info">
+                <span class="contact-btn__label">Instagram</span>
+                <span class="contact-btn__detail">@luishenriquesaraiva.vet</span>
+              </span>
+            </a>
+          </nav>
         </div>
+
+      </div> <!-- END BENTO GRID -->
+
+      <!-- ACTIONS -->
+      <div class="actions">
+        <button class="btn btn--primary" id="btn-save-contact" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/></svg>
+          <span>Salvar Contato</span>
+        </button>
+        <button class="btn btn--ghost" id="btn-share" type="button" title="Compartilhar cartão">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+        </button>
       </div>
 
       <!-- FOOTER -->
@@ -198,8 +209,6 @@
   <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- QR Code Library -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

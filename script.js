@@ -1,41 +1,16 @@
 // ========================================
 // CARTÃO DE VISITA DIGITAL — INTERATIVIDADE
-// Luís Henrique Saraiva
+// Luís Henrique Saraiva — Veterinária & IA
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  createParticles();
   bindActions();
-  generateQRCode();
+  initParticles();
+  initCardTilt();
 });
 
 // ---------------------------------------------------------------------------
-// Particles — floating dots in the background
-// ---------------------------------------------------------------------------
-function createParticles() {
-  const container = document.getElementById('particles');
-  if (!container) return;
-
-  const count = 35;
-
-  for (let i = 0; i < count; i++) {
-    const p = document.createElement('div');
-    p.classList.add('particle');
-    p.style.left = `${Math.random() * 100}%`;
-    p.style.top = `${Math.random() * 100}%`;
-    p.style.setProperty('--duration', `${3 + Math.random() * 4}s`);
-    p.style.setProperty('--delay', `${Math.random() * 5}s`);
-
-    const size = 1 + Math.random() * 2;
-    p.style.width = `${size}px`;
-    p.style.height = `${size}px`;
-
-    container.appendChild(p);
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Button bindings
+// Bindings e Eventos
 // ---------------------------------------------------------------------------
 function bindActions() {
   const saveBtn = document.getElementById('btn-save-contact');
@@ -44,14 +19,14 @@ function bindActions() {
   if (saveBtn) saveBtn.addEventListener('click', downloadVCard);
   if (shareBtn) shareBtn.addEventListener('click', shareCard);
 
-  // Ripple effect on every interactive button
+  // Efeito Ripple em todos os botões interativos
   document.querySelectorAll('.contact-btn, .btn').forEach(btn => {
     btn.addEventListener('click', createRipple);
   });
 }
 
 // ---------------------------------------------------------------------------
-// vCard download
+// Download do vCard (.vcf)
 // ---------------------------------------------------------------------------
 function downloadVCard() {
   const vcard = [
@@ -67,7 +42,7 @@ function downloadVCard() {
     'X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/luis-henrique-saraiva',
     'X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/luishenriquesaraiva.vet/',
     'ADR;TYPE=HOME:;;;;;;Minas Gerais;Brasil',
-    'NOTE:Médico Veterinário especialista em sanidade animal\\, patologia\\, biossegurança\\, docência e gestão de projetos.',
+    'NOTE:Médico Veterinário especialista em sanidade animal\\, patologia suína\\, biossegurança\\, Inteligência Artificial no Agronegócio.',
     'END:VCARD'
   ].join('\r\n');
 
@@ -86,7 +61,7 @@ function downloadVCard() {
 }
 
 // ---------------------------------------------------------------------------
-// Share (Web Share API → clipboard fallback)
+// Compartilhamento do Cartão (Web Share API com Fallback)
 // ---------------------------------------------------------------------------
 async function shareCard() {
   const data = {
@@ -104,7 +79,7 @@ async function shareCard() {
     }
   }
 
-  // Fallback: copy URL
+  // Fallback: Copiar URL
   try {
     await navigator.clipboard.writeText(window.location.href);
     showToast('🔗 Link copiado para a área de transferência!');
@@ -114,7 +89,7 @@ async function shareCard() {
 }
 
 // ---------------------------------------------------------------------------
-// Toast notification
+// Toast Notification
 // ---------------------------------------------------------------------------
 function showToast(message) {
   const toast = document.getElementById('toast');
@@ -128,7 +103,74 @@ function showToast(message) {
 }
 
 // ---------------------------------------------------------------------------
-// Ripple effect on click
+// Partículas Dinâmicas no Background
+// ---------------------------------------------------------------------------
+function initParticles() {
+  const container = document.getElementById('particles');
+  if (!container) return;
+
+  const particleCount = 20;
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+
+    const size = Math.random() * 3.5 + 1.5; // 1.5px a 5px
+    const posX = Math.random() * 100;
+    const posY = Math.random() * 100;
+    const duration = Math.random() * 15 + 12; // 12s a 27s
+    const delay = Math.random() * -20; // Inicia imediatamente
+    const opacity = Math.random() * 0.2 + 0.08;
+
+    particle.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${posX}%;
+      top: ${posY}%;
+      opacity: ${opacity};
+      --dur: ${duration}s;
+      --del: ${delay}s;
+    `;
+    container.appendChild(particle);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Efeito Tilt Parallax 3D no Card (Desktop Only)
+// ---------------------------------------------------------------------------
+function initCardTilt() {
+  const card = document.getElementById('card');
+  const wrapper = document.querySelector('.card-wrapper');
+  if (!card || !wrapper) return;
+
+  if (window.matchMedia('(hover: hover)').matches) {
+    wrapper.addEventListener('mousemove', (e) => {
+      const rect = wrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Inclinação suave de até 8 graus
+      const rotateX = -(y - centerY) / (rect.height / 16);
+      const rotateY = (x - centerX) / (rect.width / 16);
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.005, 1.005, 1.005)`;
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      card.style.transition = 'transform 0.5s ease-out';
+    });
+
+    wrapper.addEventListener('mouseenter', () => {
+      card.style.transition = 'none';
+    });
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Efeito Ripple no Clique dos Botões
 // ---------------------------------------------------------------------------
 function createRipple(e) {
   const btn = e.currentTarget;
@@ -145,34 +187,11 @@ function createRipple(e) {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.15);
     transform: scale(0);
-    animation: rippleAnim 0.6s ease-out;
+    animation: ripple 0.6s ease-out;
     pointer-events: none;
     z-index: 0;
   `;
 
   btn.appendChild(ripple);
   setTimeout(() => ripple.remove(), 600);
-}
-
-// ---------------------------------------------------------------------------
-// QR Code generation
-// ---------------------------------------------------------------------------
-function generateQRCode() {
-  const container = document.getElementById('qrCode');
-  if (!container) return;
-
-  const canvas = document.createElement('canvas');
-  container.appendChild(canvas);
-
-  // Generates QR Code pointing to the LinkedIn profile
-  QRCode.toCanvas(canvas, 'https://www.linkedin.com/in/luis-henrique-saraiva', {
-    width: 128,
-    margin: 1,
-    color: {
-      dark: '#060610',
-      light: '#ffffff'
-    }
-  }, (err) => {
-    if (err) console.error('Erro ao gerar QR Code:', err);
-  });
 }
