@@ -42,6 +42,9 @@
       --muted: #9a9a9e;
       --faint: #6c6c70;
       --cream: #f1f1f0;                          /* papel claro (QR) */
+      --wine: #a34d5e;                           /* toque bordô */
+      --wine-bright: #c97a89;
+      --wine-dim: rgba(163, 77, 94, 0.55);
       --font-caps: "Cinzel", "Times New Roman", serif;
       --font-serif: "Cormorant Garamond", Georgia, serif;
       --font-sans: "Jost", "Segoe UI", sans-serif;
@@ -51,7 +54,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; }
 
-    ::selection { background: rgba(236, 236, 240, 0.25); color: #ffffff; }
+    ::selection { background: rgba(163, 77, 94, 0.4); color: #ffffff; }
 
     body {
       font-family: var(--font-sans);
@@ -175,7 +178,7 @@
     .rule::after { background: linear-gradient(90deg, var(--hairline-gold), transparent); }
     .rule .gem {
       width: 5px; height: 5px; transform: rotate(45deg);
-      background: var(--gold); flex-shrink: 0;
+      background: var(--wine); flex-shrink: 0;
     }
 
     .foil {
@@ -220,7 +223,7 @@
     .hero__photo {
       width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
       display: block;
-      filter: grayscale(1) contrast(1.04);
+      filter: saturate(0.92) contrast(1.03);
       border: 1px solid rgba(236, 236, 240, 0.45);
     }
     /* anel duplo dourado, como filete de gravura */
@@ -252,7 +255,7 @@
       font-family: var(--font-serif);
       font-style: italic; font-weight: 500;
       font-size: clamp(1.06rem, 3.4vw, 1.2rem);
-      color: var(--gold-dim);
+      color: var(--wine-bright);
       letter-spacing: 0.02em;
     }
 
@@ -264,7 +267,7 @@
       color: var(--muted);
       line-height: 2.1;
     }
-    .hero__meta .dot { color: var(--gold-dim); padding: 0 4px; }
+    .hero__meta .dot { color: var(--wine); padding: 0 4px; }
     .hero__meta .nw { white-space: nowrap; }
 
     /* ===== Seções ===== */
@@ -340,7 +343,7 @@
     .front::before {
       content: ""; width: 5px; height: 5px; flex-shrink: 0;
       transform: rotate(45deg) translateY(-1px);
-      border: 1px solid var(--gold-dim);
+      border: 1px solid var(--wine);
     }
     .front strong {
       font-weight: 400; color: var(--text);
@@ -361,7 +364,7 @@
       padding: 7px 13px;
       transition: border-color 0.3s, color 0.3s;
     }
-    .tag:hover { border-color: var(--hairline-gold); color: var(--gold-bright); }
+    .tag:hover { border-color: var(--wine-dim); color: var(--wine-bright); }
 
     /* ===== Contatos ===== */
     .contact-grid { display: grid; }
@@ -377,7 +380,7 @@
     .contact-btn:first-child { border-top: 1px solid var(--hairline); }
     .contact-btn:hover { padding-left: 12px; }
     .contact-btn:focus-visible, .btn:focus-visible, .monogram:focus-visible {
-      outline: 1px solid var(--gold); outline-offset: 3px;
+      outline: 1px solid var(--wine-bright); outline-offset: 3px;
     }
 
     .contact-btn__icon {
@@ -388,8 +391,8 @@
       transition: background 0.3s;
     }
     .contact-btn__icon svg { width: 15px; height: 15px; fill: var(--gold); transition: fill 0.3s; }
-    .contact-btn:hover .contact-btn__icon { background: var(--gold); }
-    .contact-btn:hover .contact-btn__icon svg { fill: #121214; }
+    .contact-btn:hover .contact-btn__icon { background: var(--wine); border-color: var(--wine); }
+    .contact-btn:hover .contact-btn__icon svg { fill: #ffffff; }
 
     .contact-btn__info { min-width: 0; display: grid; gap: 1px; }
     .contact-btn__label {
@@ -405,7 +408,7 @@
     }
     .contact-btn__arrow {
       margin-left: auto; flex-shrink: 0;
-      color: var(--gold-dim); font-family: var(--font-serif);
+      color: var(--wine); font-family: var(--font-serif);
       font-size: 1.1rem;
       transition: transform 0.3s;
     }
@@ -466,7 +469,7 @@
       background: transparent; color: var(--gold);
       border: 1px solid var(--hairline-gold);
     }
-    .btn--ghost:hover { background: rgba(236, 236, 240, 0.07); }
+    .btn--ghost:hover { background: rgba(163, 77, 94, 0.14); border-color: var(--wine-dim); color: var(--wine-bright); }
 
     /* ===== Rodapé ===== */
     .card-footer {
