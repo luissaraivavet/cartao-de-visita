@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Evandro Saraiva Lopes | Gestão Industrial Farmacêutica</title>
   <meta name="description" content="Cartão de visita de Evandro Saraiva Lopes — Gestor Industrial com 10+ anos em produção farmacêutica, Lean Manufacturing, GMP e melhoria contínua. Belo Horizonte – MG.">
-  <meta name="theme-color" content="#101013">
+  <meta name="theme-color" content="#0e0e10">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Evandro Saraiva Lopes | Gestão Industrial Farmacêutica">
@@ -14,8 +14,8 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:image" content="photo.jpg">
 
-  <!-- Favicon: hexágono dourado sobre preto -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23101013'/><path d='M50 12 84 31v38L50 88 16 69V31Z' fill='none' stroke='%23c9a96e' stroke-width='6'/></svg>">
+  <!-- Favicon: hexágono prata sobre preto -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230e0e10'/><path d='M50 12 84 31v38L50 88 16 69V31Z' fill='none' stroke='%23d6d6da' stroke-width='6'/></svg>">
 
   <!-- Fonts: Cinzel (capitais gravadas) + Cormorant Garamond (editorial) + Jost (micro-caps) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,23 +25,23 @@
   <style>
     /* ================================================================
        EVANDRO SARAIVA LOPES — CARTÃO DE VISITA
-       Identidade: luxo impresso — papel preto fosco, foil dourado
-       champanhe, capitais gravadas e filetes finos.
+       Identidade: luxo impresso monocromático — papel preto fosco,
+       tinta prata, capitais gravadas e filetes finos.
        ================================================================ */
     :root {
-      --paper: #101013;                          /* fundo: papel preto fosco */
-      --card: #18181c;                           /* cartão: carvão quente */
-      --card-edge: rgba(201, 169, 110, 0.28);    /* fio dourado do cartão */
-      --hairline: rgba(234, 230, 221, 0.09);     /* filete neutro */
-      --hairline-gold: rgba(201, 169, 110, 0.32);
-      --gold: #c9a96e;                           /* champanhe */
-      --gold-bright: #e9d7a7;                    /* brilho do foil */
-      --gold-deep: #a8874f;
-      --gold-dim: rgba(201, 169, 110, 0.62);
-      --text: #eae6dd;                           /* marfim quente */
-      --muted: #999285;
-      --faint: #6d675c;
-      --cream: #ece4d4;                          /* papel claro (QR) */
+      --paper: #0e0e10;                          /* fundo: papel preto fosco */
+      --card: #1a1a1d;                           /* cartão: carvão neutro */
+      --card-edge: rgba(255, 255, 255, 0.2);     /* fio prata do cartão */
+      --hairline: rgba(236, 236, 240, 0.09);     /* filete neutro */
+      --hairline-gold: rgba(220, 220, 226, 0.3); /* filete prata */
+      --gold: #d6d6da;                           /* tinta prata */
+      --gold-bright: #ffffff;                    /* brilho do foil prata */
+      --gold-deep: #8e8e93;
+      --gold-dim: rgba(214, 214, 218, 0.6);
+      --text: #ececee;                           /* branco tinta */
+      --muted: #9a9a9e;
+      --faint: #6c6c70;
+      --cream: #f1f1f0;                          /* papel claro (QR) */
       --font-caps: "Cinzel", "Times New Roman", serif;
       --font-serif: "Cormorant Garamond", Georgia, serif;
       --font-sans: "Jost", "Segoe UI", sans-serif;
@@ -51,7 +51,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; }
 
-    ::selection { background: rgba(201, 169, 110, 0.3); color: #fff8ea; }
+    ::selection { background: rgba(236, 236, 240, 0.25); color: #ffffff; }
 
     body {
       font-family: var(--font-sans);
@@ -68,7 +68,7 @@
     .bg__vignette {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 120% 90% at 50% 0%, rgba(46, 42, 36, 0.35), transparent 55%),
+        radial-gradient(ellipse 120% 90% at 50% 0%, rgba(42, 42, 46, 0.4), transparent 55%),
         radial-gradient(ellipse 140% 100% at 50% 110%, rgba(0, 0, 0, 0.6), transparent 60%);
     }
     .bg__grain {
@@ -94,7 +94,7 @@
     .card {
       width: 100%; max-width: 520px;
       background:
-        linear-gradient(160deg, rgba(255, 252, 240, 0.022), transparent 40%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.025), transparent 40%),
         var(--card);
       border: 1px solid var(--card-edge);
       box-shadow: var(--shadow);
@@ -120,7 +120,7 @@
     .card__sheen {
       position: absolute; inset: 0; pointer-events: none;
       opacity: 0; transition: opacity 0.5s ease;
-      background: radial-gradient(460px circle at var(--mx, 50%) var(--my, 30%), rgba(233, 215, 167, 0.075), transparent 62%);
+      background: radial-gradient(460px circle at var(--mx, 50%) var(--my, 30%), rgba(255, 255, 255, 0.07), transparent 62%);
     }
     .card:hover .card__sheen { opacity: 1; }
 
@@ -220,8 +220,8 @@
     .hero__photo {
       width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
       display: block;
-      filter: grayscale(0.35) sepia(0.12) contrast(1.02);
-      border: 1px solid rgba(201, 169, 110, 0.5);
+      filter: grayscale(1) contrast(1.04);
+      border: 1px solid rgba(236, 236, 240, 0.45);
     }
     /* anel duplo dourado, como filete de gravura */
     .hero__photo-frame::after {
@@ -233,7 +233,7 @@
       width: 100%; height: 100%; border-radius: 50%;
       display: none; align-items: center; justify-content: center;
       font-family: var(--font-caps); font-size: 1.9rem; color: var(--gold);
-      border: 1px solid rgba(201, 169, 110, 0.5);
+      border: 1px solid rgba(236, 236, 240, 0.45);
     }
 
     .hero__name {
@@ -290,7 +290,7 @@
       font-size: clamp(1.12rem, 3.6vw, 1.24rem);
       font-weight: 400;
       text-align: center;
-      color: #d6d1c6;
+      color: #d4d4d7;
       line-height: 1.75;
       max-width: 40ch;
       margin: 0 auto;
@@ -333,7 +333,7 @@
       display: flex; align-items: baseline; gap: 14px;
       padding: 13px 2px;
       font-size: 0.86rem; font-weight: 300;
-      color: #c9c4b9;
+      color: #c6c6ca;
       border-bottom: 1px solid var(--hairline);
     }
     .front:first-child { border-top: 1px solid var(--hairline); }
@@ -356,7 +356,7 @@
       font-size: 0.6rem; font-weight: 400;
       letter-spacing: 0.18em; text-indent: 0.18em;
       text-transform: uppercase;
-      color: #bdb7aa;
+      color: #b8b8bc;
       border: 1px solid var(--hairline);
       padding: 7px 13px;
       transition: border-color 0.3s, color 0.3s;
@@ -389,7 +389,7 @@
     }
     .contact-btn__icon svg { width: 15px; height: 15px; fill: var(--gold); transition: fill 0.3s; }
     .contact-btn:hover .contact-btn__icon { background: var(--gold); }
-    .contact-btn:hover .contact-btn__icon svg { fill: #171410; }
+    .contact-btn:hover .contact-btn__icon svg { fill: #121214; }
 
     .contact-btn__info { min-width: 0; display: grid; gap: 1px; }
     .contact-btn__label {
@@ -457,7 +457,7 @@
       flex: 1; border: none;
       background: linear-gradient(105deg, var(--gold-deep), var(--gold-bright) 45%, var(--gold) 70%, var(--gold-deep));
       background-size: 180% 100%;
-      color: #171410;
+      color: #121214;
       transition: background-position 0.6s ease, filter 0.25s;
     }
     .btn--primary:hover { background-position: 90% 0; }
@@ -466,7 +466,7 @@
       background: transparent; color: var(--gold);
       border: 1px solid var(--hairline-gold);
     }
-    .btn--ghost:hover { background: rgba(201, 169, 110, 0.08); }
+    .btn--ghost:hover { background: rgba(236, 236, 240, 0.07); }
 
     /* ===== Rodapé ===== */
     .card-footer {
@@ -512,8 +512,8 @@
   <div class="bg" aria-hidden="true">
     <div class="bg__vignette"></div>
     <svg class="bg__seal" viewBox="0 0 100 100" fill="none">
-      <path d="M50 4 90 27v46L50 96 10 73V27Z" stroke="#c9a96e" stroke-width="0.35"/>
-      <path d="M50 14 81 32v36L50 86 19 68V32Z" stroke="#c9a96e" stroke-width="0.25"/>
+      <path d="M50 4 90 27v46L50 96 10 73V27Z" stroke="#cfcfd4" stroke-width="0.35"/>
+      <path d="M50 14 81 32v36L50 86 19 68V32Z" stroke="#cfcfd4" stroke-width="0.25"/>
     </svg>
     <div class="bg__grain"></div>
   </div>
@@ -523,9 +523,9 @@
 
       <!-- marca d'água benzênica -->
       <svg class="card__watermark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <path d="M50 6 88 28v44L50 94 12 72V28Z" stroke="#eae6dd" stroke-width="1.4"/>
-        <path d="M50 16 79 33v34L50 84 21 67V33Z" stroke="#eae6dd" stroke-width="0.9"/>
-        <path d="M50 6v10M88 28l-9 5M88 72l-9-5M50 94V84M12 72l9-5M12 28l9 5" stroke="#eae6dd" stroke-width="1.1"/>
+        <path d="M50 6 88 28v44L50 94 12 72V28Z" stroke="#ececee" stroke-width="1.4"/>
+        <path d="M50 16 79 33v34L50 84 21 67V33Z" stroke="#ececee" stroke-width="0.9"/>
+        <path d="M50 6v10M88 28l-9 5M88 72l-9-5M50 94V84M12 72l9-5M12 28l9 5" stroke="#ececee" stroke-width="1.1"/>
       </svg>
 
       <div class="card__sheen" aria-hidden="true"></div>
@@ -841,7 +841,7 @@
       ripple.style.cssText = `
         position:absolute; width:${size}px; height:${size}px;
         left:${e.clientX - rect.left - size / 2}px; top:${e.clientY - rect.top - size / 2}px;
-        border-radius:50%; background:rgba(233,215,167,0.18);
+        border-radius:50%; background:rgba(255,255,255,0.16);
         transform:scale(0); animation:ripple 0.6s ease-out;
         pointer-events:none; z-index:0;`;
       btn.appendChild(ripple);
